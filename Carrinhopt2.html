@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <script type="text/javascript">
+    
+
+
+function adicionarAoCarrinho() 
+  // Obter o produto e a quantidade do formulário
+  let produto = document.getElementById("produtos").value;
+  let quantidade = document.getElementById("quantidade").value;
+
+  // Calcular o preço total
+  let precoUnitario = 50; // Preço unitário fictício
+  let precoTotal = quantidade * precoUnitario;
+
+  // Adicionar uma nova linha à tabela
+  let tabela = document.getElementById("carrinho");
+  let novaLinha = tabela.insertRow(-1);
+  let colunaProduto = novaLinha.insertCell(0);
+  let colunaQuantidade = novaLinha.insertCell(1);
+  let colunaPrecoUnitario = novaLinha.insertCell(2);
+  let colunaPrecoTotal = novaLinha.insertCell(3);
+  colunaProduto.innerHTML = produto;
+  colunaQuantidade.innerHTML = quantidade;
+  colunaPrecoUnitario.innerHTML = `R$ ${precoUnitario.toFixed(2)}`;
+    </script>
+    <link rel="stylesheet" href="ptt.css">
+</head>
+<body>
+    <div>
+    <form>
+        <label for="produtos">Selecione o produto:</label>
+        <select id="produtos" name="produtos">
+          <option value="camisa">Camisa</option>
+          <option value="calca">Calça</option>
+          <option value="sapato">Sapato</option>
+        </select>
+        <br>
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" name="quantidade" min="1" max="10" value="1">
+        <br>
+        <button type="submit">Adicionar ao carrinho</button>
+      </form>
+<br>
+<br>
+<br>
+      <table>
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Preço unitário</th>
+            <th>Preço total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Camisa</td>
+            <td>2</td>
+            <td>R$ 50,00</td>
+            <td>R$ 100,00</td>
+          </tr>
+          <tr>
+            <td>Calça</td>
+            <td>1</td>
+            <td>R$ 80,00</td>
+            <td>R$ 80,00</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+      
+      
+
+
+
+
+
+
+</body>
+</html>
